@@ -76,8 +76,8 @@ function loadPreviousPage(){
 }
 
 function displayPokemon(){
-
-    const html = actualPage.results.map(pokemon => `<div><a href="./detail?pokemon=${pokemon.name}"><strong>${pokemon.name}</strong></a></div>`).join('');
+    //searchParams o queryParams
+    const html = actualPage.results.map(pokemon => `<div><a href="./detail.html?pokemon=${pokemon.name}"><strong>${pokemon.name}</strong></a></div>`).join('');
     document.getElementById('pokemon-container').innerHTML = html;
 
 
