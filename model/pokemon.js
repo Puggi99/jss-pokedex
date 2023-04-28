@@ -1,10 +1,11 @@
 class Pokemon {
-    constructor(name, stats = [], ability = [], location_area_encounters = '', moves= []) {
+    constructor(name, stats = [], ability = [], location_area_encounters = '', moves= [],types=[]) {
         this.name = name;
         this.stats = stats;
         this.ability = ability;
         this.location_area_encounters = location_area_encounters;
         this.moves = moves;
+        this.types= types;
 
     }
 
@@ -26,6 +27,11 @@ class Pokemon {
     addMoves(name,url){
         const newMove = new Moves(name, url);
         this.moves.push(newMove);
+    }
+
+    addTypes(name,url){
+        const newType = new Type(name,url)
+        this.types.push(newType);
     }
 }
 
@@ -54,6 +60,14 @@ class LocationArea {
 
 class Moves {
     constructor(name, url) {
+        this.name = name;
+        this.url = url;
+    }
+}
+
+class Type{
+
+    constructor(name,url){
         this.name = name;
         this.url = url;
     }
